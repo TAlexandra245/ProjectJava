@@ -1,6 +1,6 @@
 package com.example.LibraryManagement.Service;
 
-import com.example.LibraryManagement.Entity.Book;
+import com.example.LibraryManagement.entity.Book;
 import com.example.LibraryManagement.Repositories.BookRepository;
 import com.example.LibraryManagement.dto.BookDTO;
 import com.example.LibraryManagement.exception.BadRequestException;

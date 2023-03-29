@@ -1,4 +1,4 @@
-package com.example.LibraryManagement.Entity;
+package com.example.LibraryManagement.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,21 +7,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
-@Table(name = "book_reservation")
+@Table(name = "book_loan")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Reservation {
+public class BookLoan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "reservation_date")
-    private LocalDateTime reservationDate;
+    @Column(name = "rent_date")
+    private LocalDateTime rentDate;
+    @Column(name = "return_date")
+    private LocalDateTime returnDate;
     @ManyToOne
-    @JoinColumn(name = "book_id")
-    Book book;
+    @JoinColumn(name ="book_id")
+    private Book bookLoan;
 }

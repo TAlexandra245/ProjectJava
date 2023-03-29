@@ -1,6 +1,6 @@
-package com.example.LibraryManagement.Entity;
+package com.example.LibraryManagement.entity;
 
-import com.example.LibraryManagement.Enums.BookAvailability;
+import com.example.LibraryManagement.enums.Status;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -34,7 +34,7 @@ public class Book {
     @Column(name = "book_availability")
     @NotNull
     @Enumerated(EnumType.STRING)
-    BookAvailability bookAvailability;
+    Status status;
     @OneToMany(mappedBy = "book")
     private List<Reservation> reservationList;
     @OneToMany(mappedBy = "bookLoan")

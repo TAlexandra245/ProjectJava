@@ -1,8 +1,8 @@
 package com.example.LibraryManagement.mapper;
 
-import com.example.LibraryManagement.Enums.BookAvailability;
+import com.example.LibraryManagement.enums.Status;
 import com.example.LibraryManagement.dto.BookDTO;
-import com.example.LibraryManagement.Entity.Book;
+import com.example.LibraryManagement.entity.Book;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,7 +19,7 @@ public class BookMapper {
                 .isRented(bookDTO.isRented())
                 .numberOfCopies(bookDTO.getBookCopies())
                 .rentPrice(bookDTO.getRentPrice())
-                .bookAvailability(BookAvailability.valueOf(bookDTO.getBookAvailability()))
+                .status(Status.valueOf(bookDTO.getBookAvailability()))
                 .build();
     }
 
@@ -30,7 +30,7 @@ public class BookMapper {
                 .rented(book.isRented())
                 .bookCopies(book.getNumberOfCopies())
                 .rentPrice(book.getRentPrice())
-                .bookAvailability(String.valueOf(book.getBookAvailability()))
+                .bookAvailability(String.valueOf(book.getStatus()))
                 .build();
     }
 }

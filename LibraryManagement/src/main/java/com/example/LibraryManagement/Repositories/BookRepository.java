@@ -1,6 +1,6 @@
 package com.example.LibraryManagement.Repositories;
 
-import com.example.LibraryManagement.Entity.Book;
+import com.example.LibraryManagement.entity.Book;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -19,7 +19,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
     Integer updateBook(@Param("id") Integer id, @Param("rented") boolean rented);
 
     @Transactional
-    @Query("SELECT b from Book b WHERE b.bookAvailability = AVAILABLE")
+    @Query("SELECT b from Book b WHERE b.status = AVAILABLE")
     public List<Book> getAvailableBooks();
 
     boolean existsByBookName(String bookName);

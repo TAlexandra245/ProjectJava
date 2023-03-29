@@ -1,6 +1,5 @@
 package com.example.LibraryManagement.dto;
 
-import com.example.LibraryManagement.Enums.BookAvailability;
 import lombok.*;
 
 @Getter
